@@ -954,13 +954,17 @@ final class InitializerExprTypeResolver
 			}
 			$isVariadic = $variant->isVariadic();
 			$templateTypeMap = $variant->getTemplateTypeMap();
+			$variantOrigin = $origin;
 			if ($partialApplicationArgs !== null) {
 				$partialApplication = PartialFunctionApplicationParameters::apply($parameters, $partialApplicationArgs, $boundArgTypes, $returnType, $templateTypeMap);
 				if ($partialApplication === null) {
 					// creating the closure from this variant throws
 					continue;
 				}
-				[$parameters, $isVariadic, $returnType, $templateTypeMap] = $partialApplication;
+				[$parameters, $isVariadic, $returnType, $templateTypeMap, $boundParameterNames] = $partialApplication;
+				if ($variantOrigin !== null) {
+					$variantOrigin = $variantOrigin->withBoundParameterNames($boundParameterNames);
+				}
 			}
 
 			$templateTags = [];
@@ -1001,7 +1005,7 @@ final class InitializerExprTypeResolver
 				mustUseReturnValue: $mustUseReturnValue,
 				assertions: $assertions,
 				isStatic: $isStaticClosure,
-				origin: $origin,
+				origin: $variantOrigin,
 			);
 		}
 
