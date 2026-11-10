@@ -53,6 +53,7 @@ use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
 use PHPStan\Type\CallableAssertionsHelper;
 use PHPStan\Type\ClassStringType;
+use PHPStan\Type\ClosureOrigin;
 use PHPStan\Type\ClosureType;
 use PHPStan\Type\Constant\ConstantArrayType;
 use PHPStan\Type\Constant\ConstantArrayTypeBuilder;
@@ -818,6 +819,7 @@ final class InitializerExprTypeResolver
 						$nativeTypesPromoted,
 						$partialApplicationArgs,
 						$boundArgTypes ?? [],
+						ClosureOrigin::forFunction($function->getName()),
 					);
 				}
 
@@ -858,6 +860,7 @@ final class InitializerExprTypeResolver
 				$nativeTypesPromoted,
 				$partialApplicationArgs,
 				$boundArgTypes ?? [],
+				ClosureOrigin::forMethod($classType, $methodName, true),
 			);
 		}
 
@@ -872,6 +875,7 @@ final class InitializerExprTypeResolver
 	 * @param ParametersAcceptor[] $variants
 	 * @param array<Arg|ArgPlaceholder|VariadicPlaceholder>|null $partialApplicationArgs the arguments of a partial function application, null for a first-class callable
 	 * @param array<int, Type> $boundArgTypes the types of the bound arguments of a partial function application, keyed like $partialApplicationArgs
+	 * @param ClosureOrigin|null $origin the callee, whose call a call of the closure replays
 	 */
 	public function createFirstClassCallable(
 		FunctionReflection|ExtendedMethodReflection|null $function,
@@ -879,8 +883,13 @@ final class InitializerExprTypeResolver
 		bool $nativeTypesPromoted,
 		?array $partialApplicationArgs = null,
 		array $boundArgTypes = [],
+		?ClosureOrigin $origin = null,
 	): Type
 	{
+		if ($origin !== null && $partialApplicationArgs !== null) {
+			$origin = $origin->withPartialApplication($partialApplicationArgs, $boundArgTypes);
+		}
+
 		// variants of multi-variant built-ins carry functionMap parameter names,
 		// but the closure accepts the native names as named arguments
 		$namedArgumentNames = [];
@@ -992,6 +1001,7 @@ final class InitializerExprTypeResolver
 				mustUseReturnValue: $mustUseReturnValue,
 				assertions: $assertions,
 				isStatic: $isStaticClosure,
+				origin: $origin,
 			);
 		}
 

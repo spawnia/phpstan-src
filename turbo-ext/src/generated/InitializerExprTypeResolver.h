@@ -98,57 +98,59 @@ inline constexpr char strings[] =
 	"variants\0" /* 1119 */
 	"partialApplicationArgs\0" /* 1128 */
 	"[]\0" /* 1151 */
-	"createFirstClassCallable\0" /* 1154 */
-	"parameters\0" /* 1179 */
-	"names\0" /* 1190 */
-	"renameParameters\0" /* 1196 */
-	"getBitwiseAndType\0" /* 1213 */
-	"getBitwiseOrType\0" /* 1231 */
-	"getBitwiseXorType\0" /* 1248 */
-	"getSpaceshipType\0" /* 1266 */
-	"getDivType\0" /* 1283 */
-	"getModType\0" /* 1294 */
-	"getPlusType\0" /* 1305 */
-	"getMinusType\0" /* 1317 */
-	"getMulType\0" /* 1330 */
-	"getPowType\0" /* 1341 */
-	"getShiftLeftType\0" /* 1352 */
-	"getShiftRightType\0" /* 1369 */
-	"leftType\0" /* 1387 */
-	"rightType\0" /* 1396 */
-	"PHPStan\\Type\\TypeResult\0" /* 1406 */
-	"resolveIdenticalType\0" /* 1430 */
-	"resolveEqualType\0" /* 1451 */
-	"isNonNumericString\0" /* 1468 */
-	"PHPStan\\Type\\Constant\\ConstantArrayType\0" /* 1487 */
-	"valueComparisonCallback\0" /* 1527 */
-	"resolveConstantArrayTypeComparison\0" /* 1551 */
-	"class\0" /* 1586 */
-	"PhpParser\\Node\\Name|PhpParser\\Node\\Expr\0" /* 1592 */
-	"constantName\0" /* 1632 */
-	"classReflection\0" /* 1645 */
-	"PHPStan\\Reflection\\ClassReflection\0" /* 1661 */
-	"false\0" /* 1696 */
-	"getClassConstFetchTypeByReflection\0" /* 1702 */
-	"fetchedOnType\0" /* 1737 */
-	"transformStaticType\0" /* 1751 */
-	"getClassConstFetchType\0" /* 1771 */
-	"getUnaryPlusType\0" /* 1794 */
-	"getUnaryMinusType\0" /* 1811 */
-	"getBitwiseNotType\0" /* 1829 */
-	"getBitwiseNotTypeFromType\0" /* 1847 */
-	"name\0" /* 1873 */
-	"PhpParser\\Node\\Name\0" /* 1878 */
-	"resolveName\0" /* 1898 */
-	"PHPStan\\Type\\TypeWithClassName\0" /* 1910 */
-	"resolveTypeByName\0" /* 1941 */
-	"classType\0" /* 1959 */
-	"methodReflectionCandidate\0" /* 1969 */
-	"PHPStan\\Reflection\\MethodReflection\0" /* 1995 */
-	"resolveTypeByNameWithLateStaticBinding\0" /* 2031 */
-	"PHPStan\\Reflection\\ReflectionProvider\0" /* 2070 */
-	"getReflectionProvider\0" /* 2108 */
-	"getNeverType"; /* 2130 */
+	"origin\0" /* 1154 */
+	"PHPStan\\Type\\ClosureOrigin\0" /* 1161 */
+	"createFirstClassCallable\0" /* 1188 */
+	"parameters\0" /* 1213 */
+	"names\0" /* 1224 */
+	"renameParameters\0" /* 1230 */
+	"getBitwiseAndType\0" /* 1247 */
+	"getBitwiseOrType\0" /* 1265 */
+	"getBitwiseXorType\0" /* 1282 */
+	"getSpaceshipType\0" /* 1300 */
+	"getDivType\0" /* 1317 */
+	"getModType\0" /* 1328 */
+	"getPlusType\0" /* 1339 */
+	"getMinusType\0" /* 1351 */
+	"getMulType\0" /* 1364 */
+	"getPowType\0" /* 1375 */
+	"getShiftLeftType\0" /* 1386 */
+	"getShiftRightType\0" /* 1403 */
+	"leftType\0" /* 1421 */
+	"rightType\0" /* 1430 */
+	"PHPStan\\Type\\TypeResult\0" /* 1440 */
+	"resolveIdenticalType\0" /* 1464 */
+	"resolveEqualType\0" /* 1485 */
+	"isNonNumericString\0" /* 1502 */
+	"PHPStan\\Type\\Constant\\ConstantArrayType\0" /* 1521 */
+	"valueComparisonCallback\0" /* 1561 */
+	"resolveConstantArrayTypeComparison\0" /* 1585 */
+	"class\0" /* 1620 */
+	"PhpParser\\Node\\Name|PhpParser\\Node\\Expr\0" /* 1626 */
+	"constantName\0" /* 1666 */
+	"classReflection\0" /* 1679 */
+	"PHPStan\\Reflection\\ClassReflection\0" /* 1695 */
+	"false\0" /* 1730 */
+	"getClassConstFetchTypeByReflection\0" /* 1736 */
+	"fetchedOnType\0" /* 1771 */
+	"transformStaticType\0" /* 1785 */
+	"getClassConstFetchType\0" /* 1805 */
+	"getUnaryPlusType\0" /* 1828 */
+	"getUnaryMinusType\0" /* 1845 */
+	"getBitwiseNotType\0" /* 1863 */
+	"getBitwiseNotTypeFromType\0" /* 1881 */
+	"name\0" /* 1907 */
+	"PhpParser\\Node\\Name\0" /* 1912 */
+	"resolveName\0" /* 1932 */
+	"PHPStan\\Type\\TypeWithClassName\0" /* 1944 */
+	"resolveTypeByName\0" /* 1975 */
+	"classType\0" /* 1993 */
+	"methodReflectionCandidate\0" /* 2003 */
+	"PHPStan\\Reflection\\MethodReflection\0" /* 2029 */
+	"resolveTypeByNameWithLateStaticBinding\0" /* 2065 */
+	"PHPStan\\Reflection\\ReflectionProvider\0" /* 2104 */
+	"getReflectionProvider\0" /* 2142 */
+	"getNeverType"; /* 2164 */
 inline constexpr reg::PackedArg args[] = {
 	reg::packed(0, 0, 17), /* __construct $constantResolver */
 	reg::packed(51, 0, 78), /* __construct $reflectionProviderProvider */
@@ -198,9 +200,10 @@ inline constexpr reg::PackedArg args[] = {
 	reg::packed(968, MAY_BE_BOOL), /* createFirstClassCallable $nativeTypesPromoted */
 	reg::packed(1128, MAY_BE_NULL | MAY_BE_ARRAY, reg::NoString, false, false, 758), /* createFirstClassCallable $partialApplicationArgs */
 	reg::packed(988, MAY_BE_ARRAY, reg::NoString, false, false, 1151), /* createFirstClassCallable $boundArgTypes */
+	reg::packed(1154, MAY_BE_NULL, 1161, false, false, 758), /* createFirstClassCallable $origin */
 	reg::packed(559, 0, 560), /* createFirstClassCallable return */
-	reg::packed(1179, MAY_BE_ARRAY), /* renameParameters $parameters */
-	reg::packed(1190, MAY_BE_ARRAY), /* renameParameters $names */
+	reg::packed(1213, MAY_BE_ARRAY), /* renameParameters $parameters */
+	reg::packed(1224, MAY_BE_ARRAY), /* renameParameters $names */
 	reg::packed(559, MAY_BE_ARRAY), /* renameParameters return */
 	reg::packed(636, 0, 489), /* getBitwiseAndType $left */
 	reg::packed(641, 0, 489), /* getBitwiseAndType $right */
@@ -250,31 +253,31 @@ inline constexpr reg::PackedArg args[] = {
 	reg::packed(641, 0, 489), /* getShiftRightType $right */
 	reg::packed(647, MAY_BE_CALLABLE), /* getShiftRightType $getTypeCallback */
 	reg::packed(559, 0, 560), /* getShiftRightType return */
-	reg::packed(1387, 0, 560), /* resolveIdenticalType $leftType */
-	reg::packed(1396, 0, 560), /* resolveIdenticalType $rightType */
-	reg::packed(559, 0, 1406), /* resolveIdenticalType return */
-	reg::packed(1387, 0, 560), /* resolveEqualType $leftType */
-	reg::packed(1396, 0, 560), /* resolveEqualType $rightType */
+	reg::packed(1421, 0, 560), /* resolveIdenticalType $leftType */
+	reg::packed(1430, 0, 560), /* resolveIdenticalType $rightType */
+	reg::packed(559, 0, 1440), /* resolveIdenticalType return */
+	reg::packed(1421, 0, 560), /* resolveEqualType $leftType */
+	reg::packed(1430, 0, 560), /* resolveEqualType $rightType */
 	reg::packed(722, MAY_BE_NULL, 734, false, false, 758), /* resolveEqualType $phpVersions */
-	reg::packed(559, 0, 1406), /* resolveEqualType return */
+	reg::packed(559, 0, 1440), /* resolveEqualType return */
 	reg::packed(840, 0, 560), /* isNonNumericString $type */
 	reg::packed(722, MAY_BE_ARRAY), /* isNonNumericString $phpVersions */
 	reg::packed(559, MAY_BE_BOOL), /* isNonNumericString return */
-	reg::packed(1387, 0, 1487), /* resolveConstantArrayTypeComparison $leftType */
-	reg::packed(1396, 0, 1487), /* resolveConstantArrayTypeComparison $rightType */
-	reg::packed(1527, MAY_BE_CALLABLE), /* resolveConstantArrayTypeComparison $valueComparisonCallback */
-	reg::packed(559, 0, 1406), /* resolveConstantArrayTypeComparison return */
-	reg::packed(1586, 0, 1592), /* getClassConstFetchTypeByReflection $class */
-	reg::packed(1632, MAY_BE_STRING), /* getClassConstFetchTypeByReflection $constantName */
-	reg::packed(1645, MAY_BE_NULL, 1661), /* getClassConstFetchTypeByReflection $classReflection */
+	reg::packed(1421, 0, 1521), /* resolveConstantArrayTypeComparison $leftType */
+	reg::packed(1430, 0, 1521), /* resolveConstantArrayTypeComparison $rightType */
+	reg::packed(1561, MAY_BE_CALLABLE), /* resolveConstantArrayTypeComparison $valueComparisonCallback */
+	reg::packed(559, 0, 1440), /* resolveConstantArrayTypeComparison return */
+	reg::packed(1620, 0, 1626), /* getClassConstFetchTypeByReflection $class */
+	reg::packed(1666, MAY_BE_STRING), /* getClassConstFetchTypeByReflection $constantName */
+	reg::packed(1679, MAY_BE_NULL, 1695), /* getClassConstFetchTypeByReflection $classReflection */
 	reg::packed(647, MAY_BE_CALLABLE), /* getClassConstFetchTypeByReflection $getTypeCallback */
-	reg::packed(968, MAY_BE_BOOL, reg::NoString, false, false, 1696), /* getClassConstFetchTypeByReflection $nativeTypesPromoted */
+	reg::packed(968, MAY_BE_BOOL, reg::NoString, false, false, 1730), /* getClassConstFetchTypeByReflection $nativeTypesPromoted */
 	reg::packed(559, 0, 560), /* getClassConstFetchTypeByReflection return */
 	reg::packed(840, 0, 560), /* transformStaticType $type */
-	reg::packed(1737, 0, 560), /* transformStaticType $fetchedOnType */
+	reg::packed(1771, 0, 560), /* transformStaticType $fetchedOnType */
 	reg::packed(559, 0, 560), /* transformStaticType return */
-	reg::packed(1586, 0, 1592), /* getClassConstFetchType $class */
-	reg::packed(1632, MAY_BE_STRING), /* getClassConstFetchType $constantName */
+	reg::packed(1620, 0, 1626), /* getClassConstFetchType $class */
+	reg::packed(1666, MAY_BE_STRING), /* getClassConstFetchType $constantName */
 	reg::packed(586, MAY_BE_NULL | MAY_BE_STRING), /* getClassConstFetchType $className */
 	reg::packed(647, MAY_BE_CALLABLE), /* getClassConstFetchType $getTypeCallback */
 	reg::packed(559, 0, 560), /* getClassConstFetchType return */
@@ -289,19 +292,19 @@ inline constexpr reg::PackedArg args[] = {
 	reg::packed(559, 0, 560), /* getBitwiseNotType return */
 	reg::packed(813, 0, 560), /* getBitwiseNotTypeFromType $exprType */
 	reg::packed(559, 0, 560), /* getBitwiseNotTypeFromType return */
-	reg::packed(1873, 0, 1878), /* resolveName $name */
-	reg::packed(1645, MAY_BE_NULL, 1661), /* resolveName $classReflection */
+	reg::packed(1907, 0, 1912), /* resolveName $name */
+	reg::packed(1679, MAY_BE_NULL, 1695), /* resolveName $classReflection */
 	reg::packed(559, MAY_BE_STRING), /* resolveName return */
-	reg::packed(1873, 0, 1878), /* resolveTypeByName $name */
-	reg::packed(1645, MAY_BE_NULL, 1661), /* resolveTypeByName $classReflection */
-	reg::packed(559, 0, 1910), /* resolveTypeByName return */
-	reg::packed(1586, 0, 1878), /* resolveTypeByNameWithLateStaticBinding $class */
-	reg::packed(1959, 0, 560), /* resolveTypeByNameWithLateStaticBinding $classType */
-	reg::packed(1969, 0, 1995), /* resolveTypeByNameWithLateStaticBinding $methodReflectionCandidate */
+	reg::packed(1907, 0, 1912), /* resolveTypeByName $name */
+	reg::packed(1679, MAY_BE_NULL, 1695), /* resolveTypeByName $classReflection */
+	reg::packed(559, 0, 1944), /* resolveTypeByName return */
+	reg::packed(1620, 0, 1912), /* resolveTypeByNameWithLateStaticBinding $class */
+	reg::packed(1993, 0, 560), /* resolveTypeByNameWithLateStaticBinding $classType */
+	reg::packed(2003, 0, 2029), /* resolveTypeByNameWithLateStaticBinding $methodReflectionCandidate */
 	reg::packed(559, 0, 560), /* resolveTypeByNameWithLateStaticBinding return */
-	reg::packed(559, 0, 2070), /* getReflectionProvider return */
-	reg::packed(1387, 0, 560), /* getNeverType $leftType */
-	reg::packed(1396, 0, 560), /* getNeverType $rightType */
+	reg::packed(559, 0, 2104), /* getReflectionProvider return */
+	reg::packed(1421, 0, 560), /* getNeverType $leftType */
+	reg::packed(1430, 0, 560), /* getNeverType $rightType */
 	reg::packed(559, 0, 560), /* getNeverType return */
 };
 using Sig = reg::Sig<strings, args>;
@@ -320,36 +323,36 @@ inline constexpr sigtab::Sig getCastObjectType = { { 822 /* getCastObjectType */
 inline constexpr sigtab::Sig getFunctionType = { { 867 /* getFunctionType */, 4, 31, 4, 35, ZEND_ACC_PUBLIC } };
 inline constexpr sigtab::Sig isParameterValueNullable = { { 914 /* isParameterValueNullable */, 1, 36, 1, 37, ZEND_ACC_PRIVATE } };
 inline constexpr sigtab::Sig getFirstClassCallableType = { { 1002 /* getFirstClassCallableType */, 3, 38, 4, 42, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig createFirstClassCallable = { { 1154 /* createFirstClassCallable */, 3, 43, 5, 48, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig renameParameters = { { 1196 /* renameParameters */, 2, 49, 2, 51, ZEND_ACC_PRIVATE | ZEND_ACC_STATIC } };
-inline constexpr sigtab::Sig getBitwiseAndType = { { 1213 /* getBitwiseAndType */, 3, 52, 3, 55, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getBitwiseOrType = { { 1231 /* getBitwiseOrType */, 3, 56, 3, 59, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getBitwiseXorType = { { 1248 /* getBitwiseXorType */, 3, 60, 3, 63, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getSpaceshipType = { { 1266 /* getSpaceshipType */, 3, 64, 3, 67, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getDivType = { { 1283 /* getDivType */, 3, 68, 3, 71, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getModType = { { 1294 /* getModType */, 3, 72, 3, 75, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getPlusType = { { 1305 /* getPlusType */, 3, 76, 3, 79, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getMinusType = { { 1317 /* getMinusType */, 3, 80, 3, 83, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getMulType = { { 1330 /* getMulType */, 3, 84, 3, 87, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getPowType = { { 1341 /* getPowType */, 3, 88, 3, 91, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getShiftLeftType = { { 1352 /* getShiftLeftType */, 3, 92, 3, 95, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getShiftRightType = { { 1369 /* getShiftRightType */, 3, 96, 3, 99, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig resolveIdenticalType = { { 1430 /* resolveIdenticalType */, 2, 100, 2, 102, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig resolveEqualType = { { 1451 /* resolveEqualType */, 2, 103, 3, 106, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig isNonNumericString = { { 1468 /* isNonNumericString */, 2, 107, 2, 109, ZEND_ACC_PRIVATE | ZEND_ACC_STATIC } };
-inline constexpr sigtab::Sig resolveConstantArrayTypeComparison = { { 1551 /* resolveConstantArrayTypeComparison */, 3, 110, 3, 113, ZEND_ACC_PRIVATE } };
-inline constexpr sigtab::Sig getClassConstFetchTypeByReflection = { { 1702 /* getClassConstFetchTypeByReflection */, 4, 114, 5, 119, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig transformStaticType = { { 1751 /* transformStaticType */, 2, 120, 2, 122, ZEND_ACC_PRIVATE } };
-inline constexpr sigtab::Sig getClassConstFetchType = { { 1771 /* getClassConstFetchType */, 4, 123, 4, 127, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getUnaryPlusType = { { 1794 /* getUnaryPlusType */, 2, 128, 2, 130, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getUnaryMinusType = { { 1811 /* getUnaryMinusType */, 2, 131, 2, 133, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getBitwiseNotType = { { 1829 /* getBitwiseNotType */, 2, 134, 2, 136, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig getBitwiseNotTypeFromType = { { 1847 /* getBitwiseNotTypeFromType */, 1, 137, 1, 138, ZEND_ACC_PUBLIC } };
-inline constexpr sigtab::Sig resolveName = { { 1898 /* resolveName */, 2, 139, 2, 141, ZEND_ACC_PRIVATE } };
-inline constexpr sigtab::Sig resolveTypeByName = { { 1941 /* resolveTypeByName */, 2, 142, 2, 144, ZEND_ACC_PRIVATE } };
-inline constexpr sigtab::Sig resolveTypeByNameWithLateStaticBinding = { { 2031 /* resolveTypeByNameWithLateStaticBinding */, 3, 145, 3, 148, ZEND_ACC_PRIVATE } };
-inline constexpr sigtab::Sig getReflectionProvider = { { 2108 /* getReflectionProvider */, 0, 149, 0, 149, ZEND_ACC_PRIVATE } };
-inline constexpr sigtab::Sig getNeverType = { { 2130 /* getNeverType */, 2, 150, 2, 152, ZEND_ACC_PRIVATE } };
+inline constexpr sigtab::Sig createFirstClassCallable = { { 1188 /* createFirstClassCallable */, 3, 43, 6, 49, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig renameParameters = { { 1230 /* renameParameters */, 2, 50, 2, 52, ZEND_ACC_PRIVATE | ZEND_ACC_STATIC } };
+inline constexpr sigtab::Sig getBitwiseAndType = { { 1247 /* getBitwiseAndType */, 3, 53, 3, 56, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getBitwiseOrType = { { 1265 /* getBitwiseOrType */, 3, 57, 3, 60, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getBitwiseXorType = { { 1282 /* getBitwiseXorType */, 3, 61, 3, 64, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getSpaceshipType = { { 1300 /* getSpaceshipType */, 3, 65, 3, 68, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getDivType = { { 1317 /* getDivType */, 3, 69, 3, 72, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getModType = { { 1328 /* getModType */, 3, 73, 3, 76, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getPlusType = { { 1339 /* getPlusType */, 3, 77, 3, 80, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getMinusType = { { 1351 /* getMinusType */, 3, 81, 3, 84, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getMulType = { { 1364 /* getMulType */, 3, 85, 3, 88, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getPowType = { { 1375 /* getPowType */, 3, 89, 3, 92, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getShiftLeftType = { { 1386 /* getShiftLeftType */, 3, 93, 3, 96, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getShiftRightType = { { 1403 /* getShiftRightType */, 3, 97, 3, 100, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig resolveIdenticalType = { { 1464 /* resolveIdenticalType */, 2, 101, 2, 103, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig resolveEqualType = { { 1485 /* resolveEqualType */, 2, 104, 3, 107, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig isNonNumericString = { { 1502 /* isNonNumericString */, 2, 108, 2, 110, ZEND_ACC_PRIVATE | ZEND_ACC_STATIC } };
+inline constexpr sigtab::Sig resolveConstantArrayTypeComparison = { { 1585 /* resolveConstantArrayTypeComparison */, 3, 111, 3, 114, ZEND_ACC_PRIVATE } };
+inline constexpr sigtab::Sig getClassConstFetchTypeByReflection = { { 1736 /* getClassConstFetchTypeByReflection */, 4, 115, 5, 120, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig transformStaticType = { { 1785 /* transformStaticType */, 2, 121, 2, 123, ZEND_ACC_PRIVATE } };
+inline constexpr sigtab::Sig getClassConstFetchType = { { 1805 /* getClassConstFetchType */, 4, 124, 4, 128, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getUnaryPlusType = { { 1828 /* getUnaryPlusType */, 2, 129, 2, 131, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getUnaryMinusType = { { 1845 /* getUnaryMinusType */, 2, 132, 2, 134, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getBitwiseNotType = { { 1863 /* getBitwiseNotType */, 2, 135, 2, 137, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig getBitwiseNotTypeFromType = { { 1881 /* getBitwiseNotTypeFromType */, 1, 138, 1, 139, ZEND_ACC_PUBLIC } };
+inline constexpr sigtab::Sig resolveName = { { 1932 /* resolveName */, 2, 140, 2, 142, ZEND_ACC_PRIVATE } };
+inline constexpr sigtab::Sig resolveTypeByName = { { 1975 /* resolveTypeByName */, 2, 143, 2, 145, ZEND_ACC_PRIVATE } };
+inline constexpr sigtab::Sig resolveTypeByNameWithLateStaticBinding = { { 2065 /* resolveTypeByNameWithLateStaticBinding */, 3, 146, 3, 149, ZEND_ACC_PRIVATE } };
+inline constexpr sigtab::Sig getReflectionProvider = { { 2142 /* getReflectionProvider */, 0, 150, 0, 150, ZEND_ACC_PRIVATE } };
+inline constexpr sigtab::Sig getNeverType = { { 2164 /* getNeverType */, 2, 151, 2, 153, ZEND_ACC_PRIVATE } };
 } // namespace sig
 
 } // namespace ptdecl::InitializerExprTypeResolver
