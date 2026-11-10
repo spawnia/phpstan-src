@@ -41,6 +41,7 @@ final class ClosureOriginCallReplay
 		NodeScopeResolver $nodeScopeResolver,
 		ExpressionResultFactory $expressionResultFactory,
 		FuncCall $expr,
+		ExpressionResult $nameResult,
 		Type $calleeType,
 		MutatingScope $scopeBeforeArgs,
 		ExpressionResultStorage $storage,
@@ -84,9 +85,13 @@ final class ClosureOriginCallReplay
 
 		$scope = $replayed[0]->getScope();
 		$isAlwaysTerminating = $replayed[0]->isAlwaysTerminating();
+		// the callee's throw points depend on the arguments (json_decode()'s flags),
+		// the closure's are the ones of any call
+		$throwPoints = [...$nameResult->getThrowPoints(), ...$replayed[0]->getThrowPoints()];
 		foreach (array_slice($replayed, 1) as $replayedResult) {
 			$scope = $scope->mergeWith($replayedResult->getScope());
 			$isAlwaysTerminating = $isAlwaysTerminating && $replayedResult->isAlwaysTerminating();
+			$throwPoints = [...$throwPoints, ...$replayedResult->getThrowPoints()];
 		}
 
 		return $expressionResultFactory->create(
@@ -95,7 +100,7 @@ final class ClosureOriginCallReplay
 			expr: $expr,
 			hasYield: $result->hasYield(),
 			isAlwaysTerminating: $result->isAlwaysTerminating() || $isAlwaysTerminating,
-			throwPoints: $result->getThrowPoints(),
+			throwPoints: $throwPoints,
 			impurePoints: $result->getImpurePoints(),
 			typeCallback: static fn (bool $nativeTypesPromoted): Type => TypeCombinator::union(...array_map(
 				static fn (ExpressionResult $replayedResult): Type => $replayedResult->getKeepVoidType($nativeTypesPromoted),

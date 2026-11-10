@@ -31,4 +31,20 @@ class Foo
 		}
 	}
 
+	public function doJson(string $s): void
+	{
+		$decode = json_decode(...);
+		try {
+			$decode($s, flags: JSON_THROW_ON_ERROR);
+		} catch (\JsonException $e) {
+
+		}
+
+		try {
+			$decode($s);
+		} catch (\JsonException $e) {
+
+		}
+	}
+
 }
