@@ -74,3 +74,12 @@ function templates(): void
 	intOnly(1, ...);
 	intOnly('x', ...);
 }
+
+/** @param array<int> $ints */
+function placementsWithUnknownCallees(mixed $cb, array $ints): void
+{
+	// compile errors whatever the callee is
+	undefinedFunction(..., ?);
+	undefinedFunction(?, ...$ints);
+	$cb(..., ?);
+}
