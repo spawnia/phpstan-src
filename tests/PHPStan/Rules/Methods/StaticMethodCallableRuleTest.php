@@ -163,6 +163,10 @@ class StaticMethodCallableRuleTest extends RuleTestCase
 				'Cannot combine partial application and unpacking.',
 				45,
 			],
+			[
+				'Cannot use named placeholder for unknown or variadic parameter $y.',
+				73,
+			],
 		]);
 	}
 
