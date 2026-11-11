@@ -35,7 +35,7 @@ class Foo
 	{
 		$decode = json_decode(...);
 		try {
-			$decode($s, flags: JSON_THROW_ON_ERROR);
+			$decode($s, false, 512, JSON_THROW_ON_ERROR);
 		} catch (\JsonException $e) {
 
 		}
