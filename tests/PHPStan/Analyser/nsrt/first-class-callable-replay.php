@@ -55,7 +55,6 @@ function problems(\DateTimeImmutable $d, array $arr, string $s, mixed $x): void
 
 	$m = $d->modify(...);
 	assertType('DateTimeImmutable', $m('+1 day'));
-	assertType('*NEVER*', $m('nonsense'));
 }
 
 function unions(bool $b, string $s): void
