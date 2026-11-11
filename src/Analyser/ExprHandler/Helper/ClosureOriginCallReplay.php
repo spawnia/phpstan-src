@@ -94,19 +94,20 @@ final class ClosureOriginCallReplay
 			$throwPoints = [...$throwPoints, ...$replayedResult->getThrowPoints()];
 		}
 
+		// positional: simple-downgrader resolves named arguments only on $this->property->method() calls
 		return $expressionResultFactory->create(
 			$scope,
-			beforeScope: $result->getBeforeScope(),
-			expr: $expr,
-			hasYield: $result->hasYield(),
-			isAlwaysTerminating: $result->isAlwaysTerminating() || $isAlwaysTerminating,
-			throwPoints: $throwPoints,
-			impurePoints: $result->getImpurePoints(),
-			typeCallback: static fn (bool $nativeTypesPromoted): Type => TypeCombinator::union(...array_map(
+			$result->getBeforeScope(),
+			$expr,
+			$result->hasYield(),
+			$result->isAlwaysTerminating() || $isAlwaysTerminating,
+			$throwPoints,
+			$result->getImpurePoints(),
+			static fn (bool $nativeTypesPromoted): Type => TypeCombinator::union(...array_map(
 				static fn (ExpressionResult $replayedResult): Type => $replayedResult->getKeepVoidType($nativeTypesPromoted),
 				$replayed,
 			)),
-			specifyTypesCallback: static function (TypeSpecifierContext $context, bool $nativeTypesPromoted) use ($replayed): SpecifiedTypes {
+			static function (TypeSpecifierContext $context, bool $nativeTypesPromoted) use ($replayed): SpecifiedTypes {
 				$specifiedTypes = $replayed[0]->getSpecifiedTypes($context, $nativeTypesPromoted);
 				foreach (array_slice($replayed, 1) as $replayedResult) {
 					$specifiedTypes = $specifiedTypes->intersectWith($replayedResult->getSpecifiedTypes($context, $nativeTypesPromoted));
@@ -114,10 +115,16 @@ final class ClosureOriginCallReplay
 
 				return $specifiedTypes;
 			},
-			createTypesCallback: static fn (Type $type, TypeSpecifierContext $context, bool $nativeTypesPromoted): SpecifiedTypes => $result->getCreatedTypes($type, $context, $nativeTypesPromoted) ?? new SpecifiedTypes(),
-			argsResult: $result->getArgsResult(),
-			variableFlow: $result->getVariableFlow(),
-			dependencies: $result->getDependencies(),
+			false,
+			null,
+			null,
+			null,
+			static fn (Type $type, TypeSpecifierContext $context, bool $nativeTypesPromoted): SpecifiedTypes => $result->getCreatedTypes($type, $context, $nativeTypesPromoted) ?? new SpecifiedTypes(),
+			null,
+			null,
+			$result->getArgsResult(),
+			$result->getVariableFlow(),
+			$result->getDependencies(),
 		);
 	}
 
