@@ -238,6 +238,9 @@ class BindCallables
 		assertType('null', \Closure::bind(self::doStatic(...), $o));
 		assertType('static-Closure(): int', self::doStatic(...)->bindTo(null));
 		assertType('((Closure(): int)|null)', $this->doInstance(...)->bindTo($o));
+		// the closure of an instance method keeps its object
+		assertType('null', $this->doInstance(...)->bindTo(null));
+		assertType('null', \Closure::bind($this->doInstance(...), null));
 	}
 
 	public function doInvoke(): void
